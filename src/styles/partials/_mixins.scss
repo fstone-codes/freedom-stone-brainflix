@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+// BREAKPOINTS
+@mixin tablet {
+    @media (min-width: ($breakpoint-min-tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: ($breakpoint-min-desktop)) {
+        @content;
+    }
+}
+
+// FLEXBOX
+
+@mixin flexbox($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

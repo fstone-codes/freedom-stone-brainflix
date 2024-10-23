@@ -1,0 +1,47 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+// RESETS
+* {
+    box-sizing: border-box;
+}
+
+a,
+body,
+button,
+div,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+header,
+html,
+img,
+input,
+li,
+p,
+section,
+span,
+textarea,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+// GLOBAL GENERAL
+body {
+    font-family: "Avenir Next", sans-serif;
+}
+
+.btn {
+    width: 100%;
+    height: 2.5rem;
+    background-color: $primary-color-blue;
+    border: none;
+    border-radius: 0.25rem;
+
+    // &__image {
+    // }
+}

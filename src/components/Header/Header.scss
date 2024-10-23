@@ -1,0 +1,62 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    @include flexbox(column, center, center);
+    padding: $spacing-sm;
+
+    &__link {
+        margin-bottom: $spacing-sm;
+    }
+
+    // &__logo {
+    // }
+
+    &__form {
+        @include flexbox(column, center, center);
+        gap: $spacing-sm;
+        width: 100%;
+    }
+
+    &__container {
+        @include flexbox(row, space-between, center);
+        gap: $spacing-sm;
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        padding: $spacing-xsm;
+        border: 1px solid $secondary-color-mercury;
+        border-radius: 0.25rem;
+        min-height: $spacing-lg;
+        background-color: $secondary-color-alabaster;
+    }
+
+    &__image-container {
+        width: 2.25rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background-color: $secondary-color-mercury;
+        overflow: hidden;
+
+        @include tablet {
+            width: 2.5rem;
+        }
+
+        &--between {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--after {
+            display: none;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+}
