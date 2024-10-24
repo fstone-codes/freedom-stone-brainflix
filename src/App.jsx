@@ -5,8 +5,11 @@ import InfoSection from "./components/InfoSection/InfoSection";
 import CommentSection from "./components/CommentSection/CommentSection";
 import QueueSection from "./components/QueueSection/QueueSection";
 import videoDetails from "./data/video-details.json";
+import { useState } from "react";
 
 function App() {
+    const [commentList, setCommentList] = useState(videoDetails[0].comments);
+
     return (
         <>
             <Header />
@@ -20,7 +23,7 @@ function App() {
                     likes={videoDetails[0].likes}
                     description={videoDetails[0].description}
                 />
-                <CommentSection />
+                <CommentSection passedCommentList={commentList} />
                 <QueueSection />
             </main>
         </>

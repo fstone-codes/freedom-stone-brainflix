@@ -1,15 +1,15 @@
 import "./CommentSection.scss";
 import CommentItem from "../CommentItem/CommentItem";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import commentIcon from "../../assets/icons/upload.svg";
+import commentIcon from "../../assets/icons/add_comment.svg";
 
-function CommentSection() {
+function CommentSection({ passedCommentList }) {
     return (
         <section className="comments">
-            <p className="comments__subtitle"></p>
+            <p className="comments__subtitle">{passedCommentList.length} Comments</p>
             <div className="comments__form-container">
-                <div className="comments__image-container">
-                    <img className="comments__image" src={avatar} />
+                <div className="avatar">
+                    <img className="avatar__image" src={avatar} />
                 </div>
                 <form className="comments__form">
                     <label className="comments__label">
@@ -27,9 +27,14 @@ function CommentSection() {
                 </form>
             </div>
             <ul className="comments__list">
-                <CommentItem />
-                <CommentItem />
-                <CommentItem />
+                {passedCommentList.map((commentItem) => (
+                    <CommentItem
+                        key={commentItem.id}
+                        name={commentItem.name}
+                        timestamp={commentItem.timestamp}
+                        comment={commentItem.comment}
+                    />
+                ))}
             </ul>
         </section>
     );

@@ -13,8 +13,8 @@ function Header() {
             <form className="header__form">
                 <div className="header__container">
                     <input className="header__input" placeholder="Search"></input>
-                    <div className="header__image-container header__image-container--between">
-                        <img className="header__image" src={avatar} />
+                    <div className="avatar avatar--between">
+                        <img className="avatar__image" src={avatar} />
                     </div>
                 </div>
                 <button className="btn">
@@ -22,8 +22,8 @@ function Header() {
                     UPLOAD
                 </button>
             </form>
-            <div className="header__image-container header__image-container--after">
-                <img className="header__image" src={avatar} />
+            <div className="avatar avatar--after">
+                <img className="avatar__image" src={avatar} />
             </div>
         </header>
     );

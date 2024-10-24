@@ -3,7 +3,8 @@
 
 .header {
     @include flexbox(column, center, center);
-    padding: $spacing-sm;
+    margin: $spacing-sm 0;
+    padding: 0 $spacing-sm;
 
     &__link {
         margin-bottom: $spacing-sm;
@@ -31,32 +32,5 @@
         border-radius: 0.25rem;
         min-height: $spacing-lg;
         background-color: $secondary-color-alabaster;
-    }
-
-    &__image-container {
-        width: 2.25rem;
-        aspect-ratio: 1 / 1;
-        border-radius: 50%;
-        background-color: $secondary-color-mercury;
-        overflow: hidden;
-
-        @include tablet {
-            width: 2.5rem;
-        }
-
-        &--between {
-            @include tablet {
-                display: none;
-            }
-        }
-
-        &--after {
-            display: none;
-        }
-    }
-
-    &__image {
-        height: 100%;
-        aspect-ratio: auto;
     }
 }
