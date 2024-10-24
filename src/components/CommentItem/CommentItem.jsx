@@ -2,15 +2,15 @@ import "./CommentItem.scss";
 
 function CommentItem() {
     return (
-        <li>
-            <div>
-                <img />
+        <li className="comments__item">
+            <div className="comments__image-container">
+                <img className="comments__image" />
             </div>
-            <div>
-                <p></p>
-                <p></p>
+            <div className="comments__details-container">
+                <p className="comments__name"></p>
+                <p className="comments__date"></p>
             </div>
-            <p></p>
+            <p className="comments__comment"></p>
         </li>
     );
 }

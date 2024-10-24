@@ -2,7 +2,7 @@ import "./Header.scss";
 import logo from "../../assets/logos/Brainflix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import search from "../../assets/icons/search.svg";
-import upload from "../../assets/icons/upload.svg";
+import uploadIcon from "../../assets/icons/upload.svg";
 
 function Header() {
     return (
@@ -18,7 +18,7 @@ function Header() {
                     </div>
                 </div>
                 <button className="btn">
-                    <img className="btn__image" src={upload} />
+                    <img className="btn__icon" src={uploadIcon} />
                     UPLOAD
                 </button>
             </form>
