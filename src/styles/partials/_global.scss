@@ -33,6 +33,7 @@ ul {
 // GLOBAL GENERAL
 body {
     font-family: "Avenir Next", sans-serif;
+    @include font-body;
 }
 
 .btn {
@@ -41,6 +42,7 @@ body {
     background-color: $primary-color-blue;
     border: none;
     border-radius: 0.25rem;
+    @include font-label($primary-color-white);
 
     // &__icon {
     // }
