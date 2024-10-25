@@ -5,12 +5,9 @@
     @include flexbox(column, center, center);
     margin: $spacing-sm;
 
-    &__link {
+    &__logo {
         margin-bottom: $spacing-sm;
     }
-
-    // &__logo {
-    // }
 
     &__form {
         @include flexbox(column, center, center);

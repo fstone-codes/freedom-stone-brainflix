@@ -1,11 +1,6 @@
 import "./QueueItem.scss";
 
 function QueueItem({ id, image, title, channel, handleClick }) {
-    // const handleVideoClick = () => {
-    //     // changeCurrentVideo(id);
-    //     console.log(id);
-    // };
-
     return (
         <li
             className="queue__item"

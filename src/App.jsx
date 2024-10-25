@@ -30,14 +30,14 @@ function App() {
             <main>
                 <Video currentVideo={currentVideo} />
                 <InfoSection
-                    title={videoDetails[0].title}
-                    channel={videoDetails[0].channel}
-                    timestamp={videoDetails[0].timestamp}
-                    views={videoDetails[0].views}
-                    likes={videoDetails[0].likes}
-                    description={videoDetails[0].description}
+                    title={currentVideo.title}
+                    channel={currentVideo.channel}
+                    timestamp={currentVideo.timestamp}
+                    views={currentVideo.views}
+                    likes={currentVideo.likes}
+                    description={currentVideo.description}
                 />
-                <CommentSection commentList={videoDetails[0].comments} />
+                <CommentSection commentList={currentVideo.comments} />
                 <QueueSection queueList={queueList} handleClick={handleClick} />
             </main>
         </>

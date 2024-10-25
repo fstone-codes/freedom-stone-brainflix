@@ -7,9 +7,7 @@ import uploadIcon from "../../assets/icons/upload.svg";
 function Header() {
     return (
         <header className="header">
-            <a className="header__link" href="./index.html">
-                <img className="header__logo" src={logo} alt="BrainFlix logo" />
-            </a>
+            <img className="header__logo" src={logo} alt="BrainFlix logo" />
             <form className="header__form">
                 <div className="header__container">
                     <input className="header__input" placeholder="Search"></input>
