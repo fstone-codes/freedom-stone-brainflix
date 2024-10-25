@@ -28,20 +28,23 @@
     font-size: $font-size-large;
     font-weight: $font-weight;
     line-height: 2rem;
-}
 
-// @mixin font-subheader($color: $primary-color-brainflix-black) {
-//     color: $color;
-//     font-size: $font-size-medium;
-//     font-weight: $font-weight-demi;
-//     line-height: 1.375rem;
-// }
+    @include tablet {
+        font-size: $font-size-dt-large;
+        line-height: 2.75rem;
+    }
+}
 
 @mixin font-body($color: $primary-color-brainflix-black, $font-weight: $font-weight-regular) {
     color: $color;
     font-size: $font-size-body;
     font-weight: $font-weight;
     line-height: 1.125rem;
+
+    @include tablet {
+        font-size: $font-size-dt-body;
+        line-height: 1.375rem;
+    }
 }
 
 @mixin font-label($color: $primary-color-brainflix-black) {
@@ -49,4 +52,8 @@
     font-size: $font-size-body;
     font-weight: $font-weight-demi;
     line-height: 1.25rem;
+
+    @include tablet {
+        font-size: $font-size-dt-small;
+    }
 }

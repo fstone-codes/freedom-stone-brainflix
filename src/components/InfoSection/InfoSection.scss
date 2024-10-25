@@ -2,9 +2,13 @@
 @use "../../styles/partials/variables" as *;
 
 .info {
-    @include flexbox(column, center, normal);
+    @include flexbox(column, normal, normal);
     gap: $spacing-sm;
     margin: $spacing-sm;
+
+    @include tablet {
+        margin: $spacing-med $spacing-lg;
+    }
 
     &__title {
         @include font-header;
@@ -16,11 +20,22 @@
         padding: $spacing-sm 0;
         border-top: 1px solid $secondary-color-mercury;
         border-bottom: 1px solid $secondary-color-mercury;
+
+        @include tablet {
+            padding: 0 0 $spacing-xsm;
+            border-top: none;
+            justify-content: space-between;
+        }
     }
 
     &__data-container {
         @include flexbox(column, normal, normal);
         gap: $spacing-sm;
+
+        @include tablet {
+            @include flexbox(row, normal, normal);
+            gap: $spacing-lg;
+        }
     }
 
     &__name {
