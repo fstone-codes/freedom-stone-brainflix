@@ -4,12 +4,15 @@
 .comments {
     margin: $spacing-sm;
 
-    // &__subtitle {
-    // }
+    &__subtitle {
+        @include font-body($primary-color-brainflix-black, $font-weight-demi);
+        margin: $spacing-med 0;
+    }
 
     &__form-container {
         @include flexbox(row, normal, flex-start);
         gap: $spacing-sm;
+        margin-top: $spacing-sm;
         padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
     }
@@ -17,9 +20,11 @@
     &__form {
         @include flexbox(column, normal, normal);
         gap: $spacing-sm;
+        margin-top: -1.25rem;
     }
 
     &__label {
+        @include font-label($primary-color-silver);
     }
 
     &__input {
@@ -31,6 +36,8 @@
         min-height: $spacing-lg;
         background-color: $secondary-color-alabaster;
         resize: none;
+        font-family: "Avenir Next", sans-serif;
+        @include font-body($primary-color-brainflix-black, $font-weight-regular);
     }
 
     &__list {
@@ -56,9 +63,11 @@
     }
 
     &__name {
+        @include font-body($primary-color-brainflix-black, $font-weight-demi);
     }
 
     &__date {
+        @include font-body($primary-color-silver, $font-weight-regular);
     }
 
     &__comment {

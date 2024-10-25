@@ -4,7 +4,7 @@ import QueueItem from "../QueueItem/QueueItem";
 function QueueSection({ queueList, handleClick }) {
     return (
         <section className="queue">
-            <p className="queue__title">NEXT VIDEOS</p>
+            <p className="queue__subtitle">NEXT VIDEOS</p>
             <ul className="queue__list">
                 {queueList.map((queueItem) => (
                     <QueueItem

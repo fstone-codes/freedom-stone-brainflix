@@ -1,5 +1,6 @@
 @use "./mixins" as *;
 @use "./variables" as *;
+@use "./typography" as *;
 
 // RESETS
 * {
@@ -43,6 +44,7 @@ body {
     border: none;
     border-radius: 0.25rem;
     @include font-label($primary-color-white);
+    cursor: pointer;
 
     // &__icon {
     // }

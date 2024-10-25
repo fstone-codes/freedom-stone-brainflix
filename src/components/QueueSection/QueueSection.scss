@@ -2,9 +2,10 @@
 @use "../../styles/partials/variables" as *;
 
 .queue {
-    margin: $spacing-sm;
+    margin: $spacing-sm $spacing-sm $spacing-lg;
 
-    &__title {
+    &__subtitle {
+        @include font-label($primary-color-silver);
     }
 
     &__list {
@@ -13,19 +14,21 @@
 
     &__item {
         @include flexbox(row, normal, normal);
+        gap: $spacing-sm;
         margin: $spacing-sm 0;
+        cursor: pointer;
     }
 
     &__image-container {
         flex-shrink: 0;
-        width: 30%;
-        aspect-ratio: 2 / 1;
+        width: 35%;
+        aspect-ratio: 1.75 / 1;
         border-radius: 0.25rem;
         overflow: hidden;
     }
 
     &__image {
-        width: 100%;
+        height: 100%;
         aspect-ratio: auto;
     }
 
@@ -34,6 +37,7 @@
     }
 
     &__title {
+        @include font-body($primary-color-brainflix-black, $font-weight-demi);
     }
 
     &__name {
