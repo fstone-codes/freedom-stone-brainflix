@@ -5,15 +5,29 @@
     @include flexbox(column, center, center);
     margin: $spacing-sm;
 
+    @include tablet {
+        @include flexbox(row, space-between, center);
+        margin: $spacing-sm $spacing-lg;
+    }
+
     &__logo {
         margin-bottom: $spacing-sm;
         width: 7.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
     }
 
     &__form {
         @include flexbox(column, center, center);
         gap: $spacing-sm;
         width: 100%;
+
+        @include tablet {
+            @include flexbox(row, center, center);
+            width: 70%;
+        }
     }
 
     &__container {
@@ -24,6 +38,7 @@
 
     &__input {
         width: 100%;
+        height: 2.5rem;
         padding: $spacing-xsm;
         border: 1px solid $secondary-color-mercury;
         border-radius: 0.25rem;

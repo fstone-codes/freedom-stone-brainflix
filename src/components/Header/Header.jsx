@@ -19,10 +19,10 @@ function Header() {
                     <img className="btn__icon" src={uploadIcon} />
                     UPLOAD
                 </button>
+                <div className="avatar avatar--after">
+                    <img className="avatar__image" src={avatar} />
+                </div>
             </form>
-            <div className="avatar avatar--after">
-                <img className="avatar__image" src={avatar} />
-            </div>
         </header>
     );
 }

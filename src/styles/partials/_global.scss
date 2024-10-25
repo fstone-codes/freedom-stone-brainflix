@@ -52,6 +52,10 @@ body {
     @include font-label($primary-color-white);
     cursor: pointer;
 
+    @include tablet {
+        width: 60%;
+    }
+
     &:hover {
         background-color: $secondary-color-darkblue;
     }
@@ -83,6 +87,10 @@ body {
 
     &--after {
         display: none;
+
+        @include tablet {
+            display: block;
+        }
     }
 
     &__image {
