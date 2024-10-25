@@ -37,7 +37,13 @@ body {
     @include font-body;
 }
 
+::placeholder {
+    color: $primary-color-brainflix-black;
+}
+
 .btn {
+    position: relative;
+    @include flexbox(row, center, center);
     width: 100%;
     height: 2.5rem;
     background-color: $primary-color-blue;
@@ -46,8 +52,15 @@ body {
     @include font-label($primary-color-white);
     cursor: pointer;
 
-    // &__icon {
-    // }
+    &:hover {
+        background-color: $secondary-color-darkblue;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 5%;
+        height: 1.25rem;
+    }
 }
 
 .avatar {

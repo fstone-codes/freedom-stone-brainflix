@@ -35,9 +35,14 @@
         border-radius: 0.25rem;
         min-height: $spacing-lg;
         background-color: $secondary-color-alabaster;
+        outline: none;
         resize: none;
         font-family: "Avenir Next", sans-serif;
         @include font-body($primary-color-brainflix-black, $font-weight-regular);
+
+        &:focus {
+            border: 2px solid $primary-color-blue;
+        }
     }
 
     &__list {
