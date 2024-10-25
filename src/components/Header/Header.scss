@@ -3,8 +3,7 @@
 
 .header {
     @include flexbox(column, center, center);
-    margin: $spacing-sm 0;
-    padding: 0 $spacing-sm;
+    margin: $spacing-sm;
 
     &__link {
         margin-bottom: $spacing-sm;

@@ -1,0 +1,41 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.queue {
+    margin: $spacing-sm;
+
+    &__title {
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__item {
+        @include flexbox(row, normal, normal);
+        margin: $spacing-sm 0;
+    }
+
+    &__image-container {
+        flex-shrink: 0;
+        width: 30%;
+        aspect-ratio: 2 / 1;
+        border-radius: 0.25rem;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: auto;
+    }
+
+    &__container {
+        @include flexbox(column, space-between, normal);
+    }
+
+    &__title {
+    }
+
+    &__name {
+    }
+}

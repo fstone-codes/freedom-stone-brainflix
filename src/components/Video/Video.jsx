@@ -1,11 +1,16 @@
 import "./Video.scss";
-import placeholder from "../../assets/images/Upload-video-preview.jpg";
 
-function Video() {
-    return <img className="video" src={placeholder} />;
-    {
-        /* <video className="video" autoPlay muted controls poster={placeholder}></video> */
-    }
+function Video({ currentVideo }) {
+    return (
+        <video
+            className="video"
+            // src={currentVideo.video}
+            autoPlay
+            muted
+            controls
+            poster={currentVideo.image}
+        />
+    );
 }
 
 export default Video;

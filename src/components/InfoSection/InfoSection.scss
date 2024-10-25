@@ -4,8 +4,7 @@
 .info {
     @include flexbox(column, center, normal);
     gap: $spacing-sm;
-    margin: $spacing-sm 0;
-    padding: 0 $spacing-sm;
+    margin: $spacing-sm;
 
     &__title {
     }
