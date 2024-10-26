@@ -104,6 +104,7 @@
     &__content-container {
         @include flexbox(column, normal, normal);
         gap: $spacing-xsm;
+        width: 100%;
     }
 
     &__details-container {

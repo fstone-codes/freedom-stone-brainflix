@@ -1,18 +1,18 @@
 import "./QueueSection.scss";
 import QueueItem from "../QueueItem/QueueItem";
 
-function QueueSection({ queueList, handleClick }) {
+function QueueSection({ videos, handleClick }) {
     return (
         <section className="queue">
             <p className="queue__subtitle">NEXT VIDEOS</p>
             <ul className="queue__list">
-                {queueList.map((queueItem) => (
+                {videos.map((video) => (
                     <QueueItem
-                        key={queueItem.id}
-                        id={queueItem.id}
-                        image={queueItem.image}
-                        title={queueItem.title}
-                        channel={queueItem.channel}
+                        key={video.id}
+                        id={video.id}
+                        image={video.image}
+                        title={video.title}
+                        channel={video.channel}
                         handleClick={handleClick}
                     />
                 ))}

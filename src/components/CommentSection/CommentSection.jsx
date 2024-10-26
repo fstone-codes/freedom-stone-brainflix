@@ -9,7 +9,7 @@ function CommentSection({ commentList }) {
             <p className="comments__subtitle">{commentList.length} Comments</p>
             <div className="comments__form-container">
                 <div className="avatar">
-                    <img className="avatar__image" src={avatar} />
+                    <img className="avatar__image" src={avatar} alt="user avatar" />
                 </div>
                 <form className="comments__form">
                     <label className="comments__label" htmlFor="comment">
@@ -22,18 +22,18 @@ function CommentSection({ commentList }) {
                         ></textarea>
                     </label>
                     <button className="btn">
-                        <img className="btn__icon" src={commentIcon} />
+                        <img className="btn__icon" src={commentIcon} alt="comment icon" />
                         COMMENT
                     </button>
                 </form>
             </div>
             <ul className="comments__list">
-                {commentList.map((commentItem) => (
+                {commentList.map((comment) => (
                     <CommentItem
-                        key={commentItem.id}
-                        name={commentItem.name}
-                        timestamp={commentItem.timestamp}
-                        comment={commentItem.comment}
+                        key={comment.id}
+                        name={comment.name}
+                        timestamp={comment.timestamp}
+                        comment={comment.comment}
                     />
                 ))}
             </ul>
