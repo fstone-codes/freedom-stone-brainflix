@@ -50,7 +50,10 @@ body {
     border: none;
     border-radius: 0.25rem;
     @include font-label($primary-color-white);
-    cursor: pointer;
+
+    & {
+        cursor: pointer; // wrapped per deprecation warning (Dart Sass 2.0.0.)
+    }
 
     @include tablet {
         flex: 0 0 10rem;
