@@ -26,6 +26,7 @@
 
         @include tablet {
             @include flexbox(row, center, center);
+            gap: $spacing-med;
             width: 70%;
         }
     }

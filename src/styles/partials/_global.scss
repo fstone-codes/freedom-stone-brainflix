@@ -41,6 +41,22 @@ body {
     color: $primary-color-brainflix-black;
 }
 
+.main {
+    &__container {
+        @include desktop {
+            @include flexbox(row, normal, normal);
+            margin: $spacing-lg $spacing-xxlg;
+        }
+    }
+
+    &__content-container {
+        border-right: 1px solid $secondary-color-mercury;
+    }
+
+    &__queue-container {
+    }
+}
+
 .btn {
     position: relative;
     @include flexbox(row, center, center);
@@ -53,7 +69,7 @@ body {
     cursor: pointer;
 
     @include tablet {
-        width: 60%;
+        flex: 0 0 10rem;
     }
 
     &:hover {

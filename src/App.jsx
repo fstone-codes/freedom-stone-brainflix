@@ -27,18 +27,24 @@ function App() {
     return (
         <>
             <Header />
-            <main>
+            <main className="main">
                 <Video currentVideo={currentVideo} />
-                <InfoSection
-                    title={currentVideo.title}
-                    channel={currentVideo.channel}
-                    timestamp={currentVideo.timestamp}
-                    views={currentVideo.views}
-                    likes={currentVideo.likes}
-                    description={currentVideo.description}
-                />
-                <CommentSection commentList={currentVideo.comments} />
-                <QueueSection queueList={queueList} handleClick={handleClick} />
+                <div className="main__container">
+                    <div className="main__content-container">
+                        <InfoSection
+                            title={currentVideo.title}
+                            channel={currentVideo.channel}
+                            timestamp={currentVideo.timestamp}
+                            views={currentVideo.views}
+                            likes={currentVideo.likes}
+                            description={currentVideo.description}
+                        />
+                        <CommentSection commentList={currentVideo.comments} />
+                    </div>
+                    <div className="main__queue-container">
+                        <QueueSection queueList={queueList} handleClick={handleClick} />
+                    </div>
+                </div>
             </main>
         </>
     );

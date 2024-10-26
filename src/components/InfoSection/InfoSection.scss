@@ -10,6 +10,10 @@
         margin: $spacing-med $spacing-lg;
     }
 
+    @include desktop {
+        margin: 0 0 $spacing-med;
+    }
+
     &__title {
         @include font-header;
     }
@@ -51,6 +55,9 @@
     // &__icon {
     // }
 
-    // &__description {
-    // }
+    &__description {
+        @include tablet {
+            width: 95%;
+        }
+    }
 }

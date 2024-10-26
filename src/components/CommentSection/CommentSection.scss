@@ -4,6 +4,14 @@
 .comments {
     margin: $spacing-sm;
 
+    @include tablet {
+        margin: $spacing-med $spacing-lg;
+    }
+
+    @include desktop {
+        margin: 0;
+    }
+
     &__subtitle {
         @include font-body($primary-color-brainflix-black, $font-weight-demi);
         margin: $spacing-med 0;
@@ -15,12 +23,24 @@
         margin-top: $spacing-sm;
         padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
+
+        @include desktop {
+            border-bottom: none;
+        }
     }
 
     &__form {
         @include flexbox(column, normal, normal);
         gap: $spacing-sm;
         margin-top: -1.25rem;
+
+        @include tablet {
+            @include flexbox(row, normal, normal);
+            width: 100%;
+        }
+    }
+
+    &__input-container {
     }
 
     &__label {
@@ -43,6 +63,10 @@
         &:focus {
             border: 2px solid $primary-color-blue;
         }
+
+        @include tablet {
+            height: 2.5rem;
+        }
     }
 
     &__list {
@@ -56,6 +80,15 @@
         width: 100%;
         padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
+
+        @include tablet {
+            padding: $spacing-med 0;
+        }
+
+        @include desktop {
+            border-top: 1px solid $secondary-color-mercury;
+            border-bottom: none;
+        }
     }
 
     &__content-container {
