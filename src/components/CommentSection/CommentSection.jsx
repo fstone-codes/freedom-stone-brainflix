@@ -12,17 +12,15 @@ function CommentSection({ commentList }) {
                     <img className="avatar__image" src={avatar} />
                 </div>
                 <form className="comments__form">
-                    <div className="comments__input-container">
-                        <label className="comments__label" htmlFor="comment">
-                            JOIN THE CONVERSATION
-                        </label>
+                    <label className="comments__label" htmlFor="comment">
+                        JOIN THE CONVERSATION
                         <textarea
                             className="comments__input"
                             name="comment"
                             id="comment"
                             placeholder="Add a new comment"
                         ></textarea>
-                    </div>
+                    </label>
                     <button className="btn">
                         <img className="btn__icon" src={commentIcon} />
                         COMMENT
