@@ -12,15 +12,15 @@ function Header() {
                 <div className="header__container">
                     <input className="header__input" placeholder="Search"></input>
                     <div className="avatar avatar--between">
-                        <img className="avatar__image" src={avatar} />
+                        <img className="avatar__image" src={avatar} alt="user avatar" />
                     </div>
                 </div>
                 <button className="btn">
-                    <img className="btn__icon" src={uploadIcon} />
+                    <img className="btn__icon" src={uploadIcon} alt="upload icon" />
                     UPLOAD
                 </button>
                 <div className="avatar avatar--after">
-                    <img className="avatar__image" src={avatar} />
+                    <img className="avatar__image" src={avatar} alt="user avatar" />
                 </div>
             </form>
         </header>

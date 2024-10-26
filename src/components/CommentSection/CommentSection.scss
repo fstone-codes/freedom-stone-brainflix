@@ -21,8 +21,8 @@
         @include flexbox(row, normal, flex-start);
         gap: $spacing-sm;
         margin-top: $spacing-sm;
-        padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
+        padding: $spacing-sm 0;
 
         @include tablet {
             gap: $spacing-med;
@@ -30,42 +30,40 @@
 
         @include desktop {
             gap: $spacing-lg;
-            padding: $spacing-sm $spacing-med;
             border-bottom: none;
+            padding: $spacing-sm $spacing-med;
         }
     }
 
     &__form {
         @include flexbox(column, normal, normal);
         gap: $spacing-sm;
-        width: 100%;
         margin-top: -1.25rem;
+        width: 100%;
 
         @include tablet {
             @include flexbox(row, normal, flex-end);
             gap: $spacing-med;
-            // width: 100%;
         }
     }
 
     &__label {
         @include flexbox(column, normal, normal);
-        @include font-label($primary-color-silver);
         width: 100%;
+        @include font-label($primary-color-silver);
     }
 
     &__input {
-        width: 100%;
-        height: 6rem;
-        padding: $spacing-xsm;
         border: 1px solid $secondary-color-mercury;
         border-radius: 0.25rem;
-        min-height: $spacing-lg;
+        padding: $spacing-xsm;
+        width: 100%;
+        height: 6rem;
         background-color: $secondary-color-alabaster;
-        outline: none;
-        resize: none;
         font-family: "Avenir Next", sans-serif;
         @include font-body($primary-color-brainflix-black, $font-weight-regular);
+        outline: none;
+        resize: none;
 
         &:focus {
             border: 2px solid $primary-color-blue;
@@ -84,9 +82,9 @@
     &__item {
         @include flexbox(row, normal, flex-start);
         gap: $spacing-sm;
-        width: 100%;
-        padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
+        padding: $spacing-sm 0;
+        width: 100%;
 
         @include tablet {
             gap: $spacing-med;
@@ -95,9 +93,9 @@
 
         @include desktop {
             gap: $spacing-lg;
-            padding: $spacing-med;
             border-top: 1px solid $secondary-color-mercury;
             border-bottom: none;
+            padding: $spacing-med;
         }
     }
 

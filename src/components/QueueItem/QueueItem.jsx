@@ -9,7 +9,7 @@ function QueueItem({ id, image, title, channel, handleClick }) {
             }}
         >
             <div className="queue__image-container">
-                <img className="queue__image" src={image} />
+                <img className="queue__image" src={image} alt={`${title} video poster`} />
             </div>
             <div className="queue__container">
                 <p className="queue__title">{title}</p>

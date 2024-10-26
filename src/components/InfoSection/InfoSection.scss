@@ -21,14 +21,14 @@
     &__container {
         @include flexbox(row, normal, normal);
         gap: $spacing-med;
-        padding: $spacing-sm 0;
         border-top: 1px solid $secondary-color-mercury;
         border-bottom: 1px solid $secondary-color-mercury;
+        padding: $spacing-sm 0;
 
         @include tablet {
-            padding: 0 0 $spacing-xsm;
-            border-top: none;
             justify-content: space-between;
+            border-top: none;
+            padding: 0 0 $spacing-xsm;
         }
 
         @include desktop {

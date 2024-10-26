@@ -44,11 +44,11 @@ body {
 .btn {
     position: relative;
     @include flexbox(row, center, center);
+    border: none;
+    border-radius: 0.25rem;
     width: 100%;
     height: 2.5rem;
     background-color: $primary-color-blue;
-    border: none;
-    border-radius: 0.25rem;
     @include font-label($primary-color-white);
 
     & {
@@ -71,8 +71,7 @@ body {
 }
 
 .avatar {
-    flex-shrink: 0;
-    width: 2.25rem;
+    flex: 0 0 2.25rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: $secondary-color-mercury;

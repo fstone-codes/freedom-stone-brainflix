@@ -24,11 +24,11 @@ function InfoSection({ title, channel, timestamp, views, likes, description }) {
                 </div>
                 <div className="info__data-container">
                     <p className="info__data">
-                        <img className="info__icon" src={viewIcon} />
+                        <img className="info__icon" src={viewIcon} alt="view icon" />
                         {views}
                     </p>
                     <p className="info__data">
-                        <img className="info__icon" src={likeIcon} />
+                        <img className="info__icon" src={likeIcon} alt="like icon" />
                         {likes}
                     </p>
                 </div>
