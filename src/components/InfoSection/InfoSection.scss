@@ -4,10 +4,10 @@
 .info {
     @include flexbox(column, normal, normal);
     gap: $spacing-sm;
-    margin: $spacing-sm;
+    margin: $spacing-sm 0;
 
     @include tablet {
-        margin: $spacing-med $spacing-lg;
+        margin: $spacing-med 0;
     }
 
     @include desktop {
@@ -29,6 +29,10 @@
             padding: 0 0 $spacing-xsm;
             border-top: none;
             justify-content: space-between;
+        }
+
+        @include desktop {
+            padding-right: $spacing-med;
         }
     }
 

@@ -2,10 +2,10 @@
 @use "../../styles/partials/variables" as *;
 
 .comments {
-    margin: $spacing-sm;
+    margin: $spacing-sm 0;
 
     @include tablet {
-        margin: $spacing-med $spacing-lg;
+        margin: $spacing-med 0;
     }
 
     @include desktop {
@@ -24,7 +24,13 @@
         padding: $spacing-sm 0;
         border-bottom: 1px solid $secondary-color-mercury;
 
+        @include tablet {
+            gap: $spacing-med;
+        }
+
         @include desktop {
+            gap: $spacing-lg;
+            padding: $spacing-sm $spacing-med;
             border-bottom: none;
         }
     }
@@ -36,11 +42,13 @@
 
         @include tablet {
             @include flexbox(row, normal, normal);
+            gap: $spacing-med;
             width: 100%;
         }
     }
 
     &__input-container {
+        width: 100%;
     }
 
     &__label {
@@ -82,10 +90,13 @@
         border-bottom: 1px solid $secondary-color-mercury;
 
         @include tablet {
+            gap: $spacing-med;
             padding: $spacing-med 0;
         }
 
         @include desktop {
+            gap: $spacing-lg;
+            padding: $spacing-med;
             border-top: 1px solid $secondary-color-mercury;
             border-bottom: none;
         }
