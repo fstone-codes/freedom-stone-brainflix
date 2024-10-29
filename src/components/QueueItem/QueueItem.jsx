@@ -2,12 +2,7 @@ import "./QueueItem.scss";
 
 function QueueItem({ id, image, title, channel, handleClick }) {
     return (
-        <li
-            className="queue__item"
-            onClick={() => {
-                handleClick(id);
-            }}
-        >
+        <li className="queue__item">
             <div className="queue__image-container">
                 <img className="queue__image" src={image} alt={`${title} video poster`} />
             </div>

@@ -21,7 +21,7 @@ function Main({ currentVideo, videos, handleClick }) {
                     <CommentSection commentList={currentVideo.comments} />
                 </div>
                 <div className="main__queue-container">
-                    <QueueSection videos={videos} handleClick={handleClick} />
+                    <QueueSection videos={videos} />
                 </div>
             </div>
         </main>
