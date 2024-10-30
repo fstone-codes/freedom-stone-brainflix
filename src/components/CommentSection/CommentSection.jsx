@@ -4,9 +4,11 @@ import avatar from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/icons/add_comment.svg";
 
 function CommentSection({ commentList }) {
+    console.log(commentList);
+
     return (
         <section className="comments">
-            <p className="comments__subtitle">{commentList.length} Comments</p>
+            {/* <p className="comments__subtitle">{commentList.length} Comments</p>
             <div className="comments__form-container">
                 <div className="avatar">
                     <img className="avatar__image" src={avatar} alt="user avatar" />
@@ -36,7 +38,7 @@ function CommentSection({ commentList }) {
                         comment={comment.comment}
                     />
                 ))}
-            </ul>
+            </ul> */}
         </section>
     );
 }

@@ -4,7 +4,7 @@ import InfoSection from "../InfoSection/InfoSection";
 import CommentSection from "../CommentSection/CommentSection";
 import QueueSection from "../QueueSection/QueueSection";
 
-function Main({ currentVideo, videos, handleClick }) {
+function Main({ currentVideo, videoQueue }) {
     return (
         <main className="main">
             <Video currentVideo={currentVideo} />
@@ -21,7 +21,7 @@ function Main({ currentVideo, videos, handleClick }) {
                     <CommentSection commentList={currentVideo.comments} />
                 </div>
                 <div className="main__queue-container">
-                    <QueueSection videos={videos} />
+                    <QueueSection videoQueue={videoQueue} />
                 </div>
             </div>
         </main>
