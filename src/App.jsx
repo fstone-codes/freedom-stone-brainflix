@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseUrl, apiKey } from "./utils";
 import axios from "axios";
-import videoData from "./data/video-details.json";
 import HomePage from "./pages/HomePage/HomePage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
@@ -11,15 +10,6 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
 
 function App() {
-    // const [currentVideo, setCurrentVideo] = useState(videoData[0]);
-
-    // const videos = videoData.filter((videoItem) => videoItem !== currentVideo);
-
-    // const handleClick = (videoId) => {
-    //     const clickedVideo = videos.find((videoItem) => videoItem.id === videoId);
-    //     setCurrentVideo(clickedVideo);
-    // };
-
     const [videoQueue, setVideoQueue] = useState(null);
 
     const getVideoQueueData = async () => {
@@ -30,6 +20,7 @@ function App() {
             console.error("You have an error:", error);
         }
     };
+    console.log(videoQueue);
 
     useEffect(() => {
         getVideoQueueData();
@@ -37,7 +28,7 @@ function App() {
     }, []);
 
     if (!videoQueue) {
-        return <div>Loading...</div>;
+        return <div>Loading video queue...</div>;
     }
 
     return (

@@ -1,8 +1,11 @@
 import "./QueueSection.scss";
 import QueueItem from "../QueueItem/QueueItem";
 import { Link } from "react-router-dom";
+import { baseUrl, apiKey } from "../../utils";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function QueueSection({ videoQueue, handleClick }) {
+function QueueSection({ videoQueue }) {
     return (
         <section className="queue">
             <p className="queue__subtitle">NEXT VIDEOS</p>
@@ -14,7 +17,6 @@ function QueueSection({ videoQueue, handleClick }) {
                             image={video.image}
                             title={video.title}
                             channel={video.channel}
-                            handleClick={handleClick}
                         />
                     </Link>
                 ))}

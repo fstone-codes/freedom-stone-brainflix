@@ -5,12 +5,6 @@ import { baseUrl, apiKey } from "../../utils";
 import Main from "../../components/Main/Main";
 
 function HomePage({ videoQueue }) {
-    // use params (for the ID) and state another time
-    // use second state to filter the videos
-    // useEffect to fetch ID and use that to dictate which video goes where
-    // refer to codealong for help - react router
-    // specifically dynamic routing products details page
-
     const [currentVideo, setCurrentVideo] = useState(null);
 
     const getVideoData = async () => {
@@ -29,7 +23,7 @@ function HomePage({ videoQueue }) {
     }, []);
 
     if (!currentVideo) {
-        return <div>Loading...</div>;
+        return <div>Loading home page...</div>;
     }
 
     return <Main currentVideo={currentVideo} videoQueue={videoQueue} />;
