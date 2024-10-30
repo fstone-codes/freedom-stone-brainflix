@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "./utils";
+import { baseUrl, apiKey } from "./utils.js";
 import axios from "axios";
 import HomePage from "./pages/HomePage/HomePage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";

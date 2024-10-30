@@ -1,7 +1,6 @@
 import "./Header.scss";
 import logo from "../../assets/logos/Brainflix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
-import search from "../../assets/icons/search.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
 
 function Header() {

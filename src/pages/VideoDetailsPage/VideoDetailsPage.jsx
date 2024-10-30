@@ -1,9 +1,9 @@
 import "./VideoDetailsPage.scss";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { baseUrl, apiKey } from "../../utils.js";
 import axios from "axios";
 import Main from "../../components/Main/Main";
-import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "../../utils";
 
 function VideoDetailsPage({ videoQueue }) {
     // identify the video clicked on, and pass the id to VideoDetailsPage
@@ -11,26 +11,26 @@ function VideoDetailsPage({ videoQueue }) {
 
     const [currentVideo, setCurrentVideo] = useState(null);
     const { videoId } = useParams();
+    const revisedVideoQueue = videoQueue.filter((video) => video.id !== videoId);
 
-    const getVideoData = async (id) => {
+    const getSingleVideoData = async (id) => {
         try {
             const { data } = await axios.get(`${baseUrl}/videos/${id}?api_key=${apiKey}`);
             setCurrentVideo(data);
-            console.log(data);
         } catch (error) {
             console.error("You have an error:", error);
         }
     };
 
     useEffect(() => {
-        getVideoData(videoId);
-    }, []);
+        getSingleVideoData(videoId);
+    }, [videoId]);
 
     if (!currentVideo) {
-        return <div>Loading...</div>;
+        return <div>Loading video...</div>;
     }
 
-    return <Main currentVideo={currentVideo} videoQueue={videoQueue} />;
+    return <Main currentVideo={currentVideo} videoQueue={revisedVideoQueue} />;
 }
 
 export default VideoDetailsPage;

@@ -1,17 +1,17 @@
 import "./HomePage.scss";
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { baseUrl, apiKey } from "../../utils";
+import { baseUrl, apiKey } from "../../utils.js";
+import axios from "axios";
 import Main from "../../components/Main/Main";
 
 function HomePage({ videoQueue }) {
     const [currentVideo, setCurrentVideo] = useState(null);
+    const defaultId = videoQueue[0].id;
+    const revisedVideoQueue = videoQueue.slice(1);
 
     const getVideoData = async () => {
         try {
-            const { data } = await axios.get(
-                `${baseUrl}/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=${apiKey}`
-            );
+            const { data } = await axios.get(`${baseUrl}/videos/${defaultId}?api_key=${apiKey}`);
             setCurrentVideo(data);
         } catch (error) {
             console.error("You have an error:", error);
@@ -26,7 +26,7 @@ function HomePage({ videoQueue }) {
         return <div>Loading home page...</div>;
     }
 
-    return <Main currentVideo={currentVideo} videoQueue={videoQueue} />;
+    return <Main currentVideo={currentVideo} videoQueue={revisedVideoQueue} />;
 }
 
 export default HomePage;
