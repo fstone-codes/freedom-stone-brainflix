@@ -1,0 +1,63 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+    margin: 0 $spacing-sm;
+
+    @include tablet {
+        margin: 0 $spacing-lg;
+    }
+
+    @include desktop {
+        // @include flexbox(row, normal, normal);
+        margin: $spacing-lg $spacing-xxlg;
+    }
+
+    // &__title {
+    // }
+
+    // &__form {
+    // }
+
+    // &__thumbnail-container {
+    // }
+
+    &__image {
+        width: 100%;
+        background-color: $secondary-color-mercury;
+    }
+
+    // &__input-container {
+    // }
+
+    &__label {
+        @include flexbox(column, normal, normal);
+        width: 100%;
+        @include font-label($primary-color-silver);
+    }
+
+    &__input {
+        border: 1px solid $secondary-color-mercury;
+        border-radius: 0.25rem;
+        padding: $spacing-xsm;
+        width: 100%;
+        height: 2.5rem;
+        background-color: $secondary-color-alabaster;
+        font-family: "Avenir Next", sans-serif;
+        @include font-body($primary-color-brainflix-black, $font-weight-regular);
+        outline: none;
+        &--textarea {
+            height: 6rem;
+            resize: none;
+        }
+    }
+
+    // &__cta-container {
+    // }
+
+    // &__cancel {
+    // }
+
+    // &__link {
+    // }
+}

@@ -9,19 +9,24 @@ function VideoUploadPage() {
             <h1 className="upload__title">Upload Video</h1>
             <form className="upload__form">
                 <div className="upload__thumbnail-container">
-                    <p>VIDEO THUMBNAIL</p>
+                    <p className="upload__label">VIDEO THUMBNAIL</p>
                     <img className="upload__image" src={uploadPreview} alt="video preview image" />
                 </div>
                 <div className="upload__input-container">
                     <label className="upload__label">
                         TITLE YOUR VIDEO
-                        <input className="upload__input" name="title" />
+                        <input
+                            className="upload__input"
+                            name="title"
+                            placeholder="Add a title to your video"
+                        />
                     </label>
                     <label className="upload__label">
                         ADD A VIDEO DESCRIPTION
                         <textarea
                             className="upload__input upload__input--textarea"
                             name="description"
+                            placeholder="Add a description to your video"
                         />
                     </label>
                 </div>

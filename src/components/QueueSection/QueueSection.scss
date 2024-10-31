@@ -21,14 +21,22 @@
     }
 
     &__item {
-        @include flexbox(row, normal, normal);
-        gap: $spacing-sm;
         margin: $spacing-sm 0;
         cursor: pointer;
 
         @include tablet {
-            gap: $spacing-med;
             margin: $spacing-med 0;
+        }
+    }
+
+    &__link {
+        @include flexbox(row, normal, normal);
+        gap: $spacing-sm;
+        color: $primary-color-brainflix-black;
+        text-decoration: none;
+
+        @include tablet {
+            gap: $spacing-med;
         }
     }
 
@@ -37,6 +45,7 @@
         border-radius: 0.25rem;
         width: 6.25rem;
         aspect-ratio: 1.75 / 1;
+        background-color: $secondary-color-mercury;
         overflow: hidden;
 
         @include tablet {
