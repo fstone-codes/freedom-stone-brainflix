@@ -50,6 +50,7 @@
         font-family: "Avenir Next", sans-serif;
         @include font-body($primary-color-brainflix-black, $font-weight-regular);
         outline: none;
+
         &--textarea {
             height: 6rem;
             resize: none;
@@ -66,6 +67,8 @@
         margin: $spacing-lg 0;
     }
 
-    // &__link {
-    // }
+    &__link {
+        @include font-label($primary-color-blue);
+        text-decoration: none;
+    }
 }
