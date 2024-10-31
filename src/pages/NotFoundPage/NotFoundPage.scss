@@ -1,0 +1,18 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.not-found {
+    margin: 0 $spacing-sm;
+
+    @include tablet {
+        margin: 0 $spacing-lg;
+    }
+
+    @include desktop {
+        margin: $spacing-lg $spacing-xxlg;
+    }
+
+    &__title {
+        @include font-header;
+    }
+}

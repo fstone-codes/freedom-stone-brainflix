@@ -20,11 +20,9 @@ function App() {
             console.error("You have an error:", error);
         }
     };
-    console.log(videoQueue);
 
     useEffect(() => {
         getVideoQueueData();
-        console.log(videoQueue);
     }, []);
 
     if (!videoQueue) {
