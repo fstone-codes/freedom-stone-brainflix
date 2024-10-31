@@ -2,19 +2,20 @@
 @use "../../styles/partials/variables" as *;
 
 .upload {
-    margin: 0 $spacing-sm;
+    margin: $spacing-sm $spacing-sm;
+    border-top: 1px solid $secondary-color-mercury;
 
     @include tablet {
         margin: 0 $spacing-lg;
     }
 
     @include desktop {
-        // @include flexbox(row, normal, normal);
         margin: $spacing-lg $spacing-xxlg;
     }
 
-    // &__title {
-    // }
+    &__title {
+        margin: $spacing-lg 0;
+    }
 
     // &__form {
     // }
@@ -27,8 +28,11 @@
         background-color: $secondary-color-mercury;
     }
 
-    // &__input-container {
-    // }
+    &__input-container {
+        @include flexbox(column, normal, normal);
+        gap: $spacing-sm;
+        margin: $spacing-sm 0;
+    }
 
     &__label {
         @include flexbox(column, normal, normal);
@@ -52,11 +56,15 @@
         }
     }
 
-    // &__cta-container {
-    // }
+    &__cta-container {
+        @include flexbox(column, center, center);
+        gap: $spacing-sm;
+        margin: $spacing-sm 0;
+    }
 
-    // &__cancel {
-    // }
+    &__cancel {
+        margin: $spacing-lg 0;
+    }
 
     // &__link {
     // }
