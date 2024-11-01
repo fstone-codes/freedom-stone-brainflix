@@ -15,6 +15,9 @@
 
     &__title {
         margin: $spacing-lg 0;
+        border-bottom: 1px solid $secondary-color-mercury;
+        padding-bottom: $spacing-med;
+        @include font-header;
     }
 
     // &__form {
@@ -26,6 +29,10 @@
     &__image {
         width: 100%;
         background-color: $secondary-color-mercury;
+
+        @include tablet {
+            width: 50%;
+        }
     }
 
     &__input-container {
@@ -51,6 +58,14 @@
         @include font-body($primary-color-brainflix-black, $font-weight-regular);
         outline: none;
 
+        &:focus {
+            border: 2px solid $primary-color-blue;
+        }
+
+        @include tablet {
+            height: 2.5rem;
+        }
+
         &--textarea {
             height: 6rem;
             resize: none;
@@ -61,9 +76,15 @@
         @include flexbox(column, center, center);
         gap: $spacing-sm;
         margin: $spacing-sm 0;
+
+        @include tablet {
+            @include flexbox(row, flex-end, center);
+            gap: 5.5rem;
+        }
     }
 
     &__cancel {
+        order: -1;
         margin: $spacing-lg 0;
     }
 

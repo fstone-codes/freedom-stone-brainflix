@@ -4,7 +4,7 @@ import InfoSection from "../InfoSection/InfoSection";
 import CommentSection from "../CommentSection/CommentSection";
 import QueueSection from "../QueueSection/QueueSection";
 
-function Main({ currentVideo, videoQueue }) {
+function Main({ currentVideo, commentList, fetchData, videoQueue }) {
     return (
         <main className="main">
             <Video currentVideo={currentVideo} />
@@ -18,7 +18,11 @@ function Main({ currentVideo, videoQueue }) {
                         likes={currentVideo.likes}
                         description={currentVideo.description}
                     />
-                    <CommentSection commentList={currentVideo.comments} />
+                    <CommentSection
+                        commentList={commentList}
+                        fetchData={fetchData}
+                        id={currentVideo.id}
+                    />
                 </div>
                 <div className="main__queue-container">
                     <QueueSection videoQueue={videoQueue} />

@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { baseUrl, apiKey } from "./utils.js";
 import axios from "axios";
-import HomePage from "./pages/HomePage/HomePage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -33,7 +32,7 @@ function App() {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path="/" element={<HomePage videoQueue={videoQueue} />} />
+                <Route path="/" element={<VideoDetailsPage videoQueue={videoQueue} />} />
                 <Route
                     path="video/:videoId"
                     element={<VideoDetailsPage videoQueue={videoQueue} />}

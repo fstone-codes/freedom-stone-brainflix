@@ -9,28 +9,42 @@ function VideoDetailsPage({ videoQueue }) {
     // identify the video clicked on, and pass the id to VideoDetailsPage
     // fetch the API data for that ID and use in this component
 
-    const [currentVideo, setCurrentVideo] = useState(null);
     const { videoId } = useParams();
-    const revisedVideoQueue = videoQueue.filter((video) => video.id !== videoId);
+    const [currentVideo, setCurrentVideo] = useState(null);
+    const [comments, setComments] = useState(null);
+    const id = videoId ?? videoQueue[0].id;
+
+    const revisedVideoQueue = videoQueue.filter(
+        (video) => video.id !== (videoId || videoQueue[0].id)
+    );
 
     const getSingleVideoData = async (id) => {
         try {
             const { data } = await axios.get(`${baseUrl}/videos/${id}?api_key=${apiKey}`);
             setCurrentVideo(data);
+            setComments(data.comments);
         } catch (error) {
             console.error("You have an error:", error);
         }
     };
 
+    // typically only for get request
     useEffect(() => {
-        getSingleVideoData(videoId);
+        getSingleVideoData(id);
     }, [videoId]);
 
     if (!currentVideo) {
         return <div>Loading video...</div>;
     }
 
-    return <Main currentVideo={currentVideo} videoQueue={revisedVideoQueue} />;
+    return (
+        <Main
+            currentVideo={currentVideo}
+            commentList={comments}
+            fetchData={getSingleVideoData}
+            videoQueue={revisedVideoQueue}
+        />
+    );
 }
 
 export default VideoDetailsPage;
