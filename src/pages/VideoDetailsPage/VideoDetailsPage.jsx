@@ -1,9 +1,12 @@
 import "./VideoDetailsPage.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { baseUrl, apiKey } from "../../utils.js";
+import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
-import Main from "../../components/Main/Main";
+import Video from "../../components/Video/Video";
+import InfoSection from "../../components/InfoSection/InfoSection";
+import CommentSection from "../../components/CommentSection/CommentSection";
+import QueueSection from "../../components/QueueSection/QueueSection";
 
 function VideoDetailsPage({ videoQueue }) {
     // identify the video clicked on, and pass the id to VideoDetailsPage
@@ -37,12 +40,29 @@ function VideoDetailsPage({ videoQueue }) {
     }
 
     return (
-        <Main
-            currentVideo={currentVideo}
-            commentList={comments}
-            getSingleVideoData={getSingleVideoData}
-            videoQueue={revisedVideoQueue}
-        />
+        <main className="main">
+            <Video currentVideo={currentVideo} />
+            <div className="main__container">
+                <div className="main__content-container">
+                    <InfoSection
+                        title={currentVideo.title}
+                        channel={currentVideo.channel}
+                        timestamp={currentVideo.timestamp}
+                        views={currentVideo.views}
+                        likes={currentVideo.likes}
+                        description={currentVideo.description}
+                    />
+                    <CommentSection
+                        commentList={comments}
+                        getSingleVideoData={getSingleVideoData}
+                        id={currentVideo.id}
+                    />
+                </div>
+                <div className="main__queue-container">
+                    <QueueSection videoQueue={revisedVideoQueue} />
+                </div>
+            </div>
+        </main>
     );
 }
 
