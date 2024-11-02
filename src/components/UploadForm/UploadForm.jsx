@@ -35,28 +35,34 @@ function UploadForm() {
                         alt="video preview image"
                     />
                 </div>
-                <div className="upload-form__input-container">
-                    <label className="upload-form__label">
-                        TITLE YOUR VIDEO
+                <div className="upload-form__content-container">
+                    <div className="upload-form__title-container">
+                        <label className="upload-form__label" htmlFor="title">
+                            TITLE YOUR VIDEO
+                        </label>
                         <input
                             onChange={handleTitleChange}
                             className="upload-form__input"
                             type="text"
                             name="title"
+                            id="title"
                             value={title}
                             placeholder="Add a title to your video"
                         />
-                    </label>
-                    <label className="upload-form__label">
-                        ADD A VIDEO DESCRIPTION
+                    </div>
+                    <div className="upload-form__description-container">
+                        <label className="upload-form__label" htmlFor="description">
+                            ADD A VIDEO DESCRIPTION
+                        </label>
                         <textarea
                             onChange={handleDescriptionChange}
                             className="upload-form__input upload-form__input--textarea"
                             name="description"
+                            id="description"
                             value={description}
                             placeholder="Add a description to your video"
                         />
-                    </label>
+                    </div>
                 </div>
             </div>
             <div className="upload-form__cta-container">

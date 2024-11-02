@@ -3,18 +3,25 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
-import Video from "../../components/Video/Video";
-import InfoSection from "../../components/InfoSection/InfoSection";
 import CommentSection from "../../components/CommentSection/CommentSection";
+import InfoSection from "../../components/InfoSection/InfoSection";
 import QueueSection from "../../components/QueueSection/QueueSection";
+import Video from "../../components/Video/Video";
 
 function VideoDetailsPage({ videoQueue }) {
-    // identify the video clicked on, and pass the id to VideoDetailsPage
     // fetch the API data for that ID and use in this component
+    // identify the video clicked on, and pass the id to VideoDetailsPage
 
-    const { videoId } = useParams();
+    // used to store the entire current video data (including comments, etc.)
+    // updates when another video queue item is clicked on, as its based on current video playing
     const [currentVideo, setCurrentVideo] = useState(null);
+    // used to store the comment data only for the current video
+    // updates when another video queue item is clicked on, as its based on current video playing
     const [comments, setComments] = useState(null);
+    // creates a variable...
+    const { videoId } = useParams();
+
+    // if videoId is null/undefined, id variable will be set to the id value of the first video in videoQueue array
     const id = videoId ?? videoQueue[0].id;
 
     const revisedVideoQueue = videoQueue.filter(
