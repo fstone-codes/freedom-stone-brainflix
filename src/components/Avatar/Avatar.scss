@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.avatar {
+    flex: 0 0 2.25rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: $secondary-color-mercury;
+    overflow: hidden;
+
+    @include tablet {
+        width: 2.5rem;
+    }
+
+    &__image {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+}

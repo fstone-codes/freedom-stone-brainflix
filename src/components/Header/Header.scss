@@ -3,6 +3,7 @@
 
 .header {
     @include flexbox(column, center, center);
+    gap: $spacing-sm;
     margin: $spacing-sm;
 
     @include tablet {
@@ -15,7 +16,6 @@
     }
 
     &__logo {
-        margin-bottom: $spacing-sm;
         width: 7.5rem;
 
         @include tablet {
@@ -23,22 +23,33 @@
         }
     }
 
-    &__form {
-        @include flexbox(column, center, center);
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 2.25rem;
         gap: $spacing-sm;
         width: 100%;
+
+        & .btn {
+            grid-column-end: span 2;
+        }
 
         @include tablet {
-            @include flexbox(row, center, center);
+            grid-template-columns: 1fr 10rem 2.5rem;
             gap: $spacing-med;
             width: 30rem;
-        }
-    }
 
-    &__container {
-        @include flexbox(row, space-between, center);
-        gap: $spacing-sm;
-        width: 100%;
+            & .header__input {
+                grid-column: 1;
+            }
+
+            & .btn {
+                grid-column: 2;
+            }
+
+            & .avatar {
+                grid-column: 3;
+            }
+        }
     }
 
     &__input {

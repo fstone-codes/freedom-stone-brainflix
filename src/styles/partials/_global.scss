@@ -40,34 +40,3 @@ body {
 ::placeholder {
     color: $primary-color-brainflix-black;
 }
-
-.avatar {
-    flex: 0 0 2.25rem;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    background-color: $secondary-color-mercury;
-    overflow: hidden;
-
-    @include tablet {
-        width: 2.5rem;
-    }
-
-    &--between {
-        @include tablet {
-            display: none;
-        }
-    }
-
-    &--after {
-        display: none;
-
-        @include tablet {
-            display: block;
-        }
-    }
-
-    &__image {
-        height: 100%;
-        aspect-ratio: auto;
-    }
-}

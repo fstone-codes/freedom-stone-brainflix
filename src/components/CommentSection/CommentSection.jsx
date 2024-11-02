@@ -1,11 +1,12 @@
 import "./CommentSection.scss";
 import CommentItem from "../CommentItem/CommentItem";
-import avatar from "../../assets/images/Mohan-muruge.jpg";
+
 import commentIcon from "../../assets/icons/add_comment.svg";
 import { useState } from "react";
 import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
 import Button from "../Button/Button";
+import Avatar from "../Avatar/Avatar";
 
 function CommentSection({ commentList, getSingleVideoData, id }) {
     const [comment, setComment] = useState("");
@@ -41,9 +42,7 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
         <section className="comments">
             <p className="comments__subtitle">{commentList.length} Comments</p>
             <div className="comments__form-container">
-                <div className="avatar">
-                    <img className="avatar__image" src={avatar} alt="user avatar" />
-                </div>
+                <Avatar />
                 <form className="comments__form" onSubmit={handleFormSubmit}>
                     <label className="comments__label">
                         JOIN THE CONVERSATION
