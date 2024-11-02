@@ -69,6 +69,10 @@
             border: 2px solid $primary-color-blue;
         }
 
+        &--invalid {
+            border: 1px solid #d22d2d;
+        }
+
         @include tablet {
             height: 2.5rem;
         }

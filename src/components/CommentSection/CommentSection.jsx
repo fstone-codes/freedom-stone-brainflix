@@ -1,6 +1,5 @@
 import "./CommentSection.scss";
 import CommentItem from "../CommentItem/CommentItem";
-
 import commentIcon from "../../assets/icons/add_comment.svg";
 import { useState } from "react";
 import { baseUrl, apiKey } from "../../utils";
@@ -10,6 +9,7 @@ import Avatar from "../Avatar/Avatar";
 
 function CommentSection({ commentList, getSingleVideoData, id }) {
     const [comment, setComment] = useState("");
+    const [invalidStatus, setInvalidStatus] = useState(false);
 
     const handleCommentChange = (e) => {
         setComment(e.target.value);
@@ -17,8 +17,15 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        postComment(comment);
-        setComment("");
+
+        if (comment.trim()) {
+            setInvalidStatus(false);
+            postComment(comment);
+            setComment("");
+        } else {
+            setInvalidStatus(true);
+            alert("Please input a valid comment");
+        }
     };
 
     async function postComment(newComment) {
@@ -40,7 +47,7 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
 
     return (
         <section className="comments">
-            <p className="comments__subtitle">{commentList.length} Comments</p>
+            <h2 className="comments__subtitle">{commentList.length} Comments</h2>
             <div className="comments__form-container">
                 <Avatar />
                 <form className="comments__form" onSubmit={handleFormSubmit}>
@@ -48,7 +55,9 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
                         JOIN THE CONVERSATION
                         <textarea
                             onChange={handleCommentChange}
-                            className="comments__input"
+                            className={`comments__input ${
+                                invalidStatus ? "comments__input--invalid" : ""
+                            }`}
                             name="comment"
                             value={comment}
                             placeholder="Add a new comment"
