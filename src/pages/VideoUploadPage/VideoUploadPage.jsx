@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
+import Button from "../../components/Button/Button";
 
 function VideoUploadPage() {
     const [title, setTitle] = useState("");
@@ -61,10 +62,12 @@ function VideoUploadPage() {
                     </div>
                 </div>
                 <div className="upload__cta-container">
-                    <button className="btn">
-                        <img className="btn__icon" src={publishIcon} alt="publish icon" />
-                        PUBLISH
-                    </button>
+                    <Button
+                        element="button"
+                        btnText="PUBLISH"
+                        imgSrc={publishIcon}
+                        imgAlt="publish icon"
+                    />
                     <p className="upload__cancel">
                         <Link className="upload__link" to="/">
                             CANCEL

@@ -5,6 +5,7 @@ import commentIcon from "../../assets/icons/add_comment.svg";
 import { useState } from "react";
 import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
+import Button from "../Button/Button";
 
 function CommentSection({ commentList, getSingleVideoData, id }) {
     const [comment, setComment] = useState("");
@@ -54,10 +55,12 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
                             placeholder="Add a new comment"
                         ></textarea>
                     </label>
-                    <button className="btn">
-                        <img className="btn__icon" src={commentIcon} alt="comment icon" />
-                        COMMENT
-                    </button>
+                    <Button
+                        element="button"
+                        btnText="COMMENT"
+                        imgSrc={commentIcon}
+                        imgAlt="comment icon"
+                    />
                 </form>
             </div>
             <ul className="comments__list">

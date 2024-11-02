@@ -59,7 +59,6 @@
         margin: $spacing-sm 0;
 
         @include desktop {
-            // @include flexbox(column, normal, normal);
             margin: 0;
             width: 100%;
             height: auto;

@@ -1,16 +1,11 @@
 import "./Header.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logos/Brainflix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/icons/upload.svg";
+import Button from "../Button/Button";
 
 function Header() {
-    const navigate = useNavigate();
-
-    function handleBtnClick() {
-        navigate("/upload");
-    }
-
     return (
         <header className="header">
             <Link className="header__link" to="/">
@@ -23,10 +18,13 @@ function Header() {
                         <img className="avatar__image" src={avatar} alt="user avatar" />
                     </div>
                 </div>
-                <Link to={"/upload"} className="btn">
-                    <img className="btn__icon" src={uploadIcon} alt="upload icon" />
-                    UPLOAD
-                </Link>
+                <Button
+                    element="Link"
+                    btnText="UPLOAD"
+                    imgSrc={uploadIcon}
+                    imgAlt="upload icon"
+                    path="/upload"
+                />
                 <div className="avatar avatar--after">
                     <img className="avatar__image" src={avatar} alt="user avatar" />
                 </div>

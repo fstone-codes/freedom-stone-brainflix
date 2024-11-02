@@ -1,0 +1,29 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.btn {
+    position: relative;
+    @include flexbox(row, center, center);
+    border: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    height: 2.5rem;
+    background-color: $primary-color-blue;
+    @include font-label($primary-color-white);
+    text-decoration: none;
+    cursor: pointer;
+
+    @include tablet {
+        flex: 0 0 10rem;
+    }
+
+    &:hover {
+        background-color: $secondary-color-darkblue;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 5%;
+        height: 1.25rem;
+    }
+}
