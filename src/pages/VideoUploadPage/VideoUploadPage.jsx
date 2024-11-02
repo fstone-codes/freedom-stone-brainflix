@@ -27,32 +27,38 @@ function VideoUploadPage() {
         <main className="upload">
             <h1 className="upload__title">Upload Video</h1>
             <form className="upload__form" onSubmit={handleFormSubmit}>
-                <div className="upload__thumbnail-container">
-                    <p className="upload__label">VIDEO THUMBNAIL</p>
-                    <img className="upload__image" src={uploadPreview} alt="video preview image" />
-                </div>
-                <div className="upload__input-container">
-                    <label className="upload__label">
-                        TITLE YOUR VIDEO
-                        <input
-                            onChange={handleTitleChange}
-                            className="upload__input"
-                            type="text"
-                            name="title"
-                            value={title}
-                            placeholder="Add a title to your video"
+                <div className="upload__container">
+                    <div className="upload__thumbnail-container">
+                        <p className="upload__label">VIDEO THUMBNAIL</p>
+                        <img
+                            className="upload__image"
+                            src={uploadPreview}
+                            alt="video preview image"
                         />
-                    </label>
-                    <label className="upload__label">
-                        ADD A VIDEO DESCRIPTION
-                        <textarea
-                            onChange={handleDescriptionChange}
-                            className="upload__input upload__input--textarea"
-                            name="description"
-                            value={description}
-                            placeholder="Add a description to your video"
-                        />
-                    </label>
+                    </div>
+                    <div className="upload__input-container">
+                        <label className="upload__label">
+                            TITLE YOUR VIDEO
+                            <input
+                                onChange={handleTitleChange}
+                                className="upload__input"
+                                type="text"
+                                name="title"
+                                value={title}
+                                placeholder="Add a title to your video"
+                            />
+                        </label>
+                        <label className="upload__label">
+                            ADD A VIDEO DESCRIPTION
+                            <textarea
+                                onChange={handleDescriptionChange}
+                                className="upload__input upload__input--textarea"
+                                name="description"
+                                value={description}
+                                placeholder="Add a description to your video"
+                            />
+                        </label>
+                    </div>
                 </div>
                 <div className="upload__cta-container">
                     <button className="btn">

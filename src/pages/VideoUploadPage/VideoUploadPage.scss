@@ -14,17 +14,31 @@
     }
 
     &__title {
-        margin: $spacing-lg 0;
-        border-bottom: 1px solid $secondary-color-mercury;
-        padding-bottom: $spacing-med;
+        margin: $spacing-sm 0;
         @include font-header;
+
+        @include tablet {
+            margin: $spacing-lg 0;
+            border-bottom: 1px solid $secondary-color-mercury;
+            padding-bottom: $spacing-med;
+        }
     }
 
     // &__form {
     // }
 
-    // &__thumbnail-container {
-    // }
+    &__container {
+        @include desktop {
+            @include flexbox(row, normal, normal);
+            gap: $spacing-lg;
+        }
+    }
+
+    &__thumbnail-container {
+        @include desktop {
+            flex: 0 0 35%;
+        }
+    }
 
     &__image {
         width: 100%;
@@ -33,12 +47,23 @@
         @include tablet {
             width: 50%;
         }
+
+        @include desktop {
+            width: 100%;
+        }
     }
 
     &__input-container {
         @include flexbox(column, normal, normal);
         gap: $spacing-sm;
         margin: $spacing-sm 0;
+
+        @include desktop {
+            // @include flexbox(column, normal, normal);
+            margin: 0;
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__label {
@@ -58,17 +83,21 @@
         @include font-body($primary-color-brainflix-black, $font-weight-regular);
         outline: none;
 
-        &:focus {
-            border: 2px solid $primary-color-blue;
-        }
-
         @include tablet {
             height: 2.5rem;
+        }
+
+        &:focus {
+            border: 2px solid $primary-color-blue;
         }
 
         &--textarea {
             height: 6rem;
             resize: none;
+
+            @include desktop {
+                height: 100%;
+            }
         }
     }
 
@@ -80,12 +109,19 @@
         @include tablet {
             @include flexbox(row, flex-end, center);
             gap: 5.5rem;
+            margin: $spacing-med 0;
+            border-top: 1px solid $secondary-color-mercury;
+            padding-top: $spacing-med;
         }
     }
 
     &__cancel {
-        order: -1;
         margin: $spacing-lg 0;
+
+        @include tablet {
+            margin: 0;
+            order: -1;
+        }
     }
 
     &__link {

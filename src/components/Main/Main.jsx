@@ -4,7 +4,7 @@ import InfoSection from "../InfoSection/InfoSection";
 import CommentSection from "../CommentSection/CommentSection";
 import QueueSection from "../QueueSection/QueueSection";
 
-function Main({ currentVideo, commentList, fetchData, videoQueue }) {
+function Main({ currentVideo, commentList, getSingleVideoData, videoQueue }) {
     return (
         <main className="main">
             <Video currentVideo={currentVideo} />
@@ -20,7 +20,7 @@ function Main({ currentVideo, commentList, fetchData, videoQueue }) {
                     />
                     <CommentSection
                         commentList={commentList}
-                        fetchData={fetchData}
+                        getSingleVideoData={getSingleVideoData}
                         id={currentVideo.id}
                     />
                 </div>

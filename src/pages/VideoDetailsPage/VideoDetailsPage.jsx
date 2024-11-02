@@ -28,7 +28,6 @@ function VideoDetailsPage({ videoQueue }) {
         }
     };
 
-    // typically only for get request
     useEffect(() => {
         getSingleVideoData(id);
     }, [videoId]);
@@ -41,7 +40,7 @@ function VideoDetailsPage({ videoQueue }) {
         <Main
             currentVideo={currentVideo}
             commentList={comments}
-            fetchData={getSingleVideoData}
+            getSingleVideoData={getSingleVideoData}
             videoQueue={revisedVideoQueue}
         />
     );

@@ -2,11 +2,11 @@ import "./CommentSection.scss";
 import CommentItem from "../CommentItem/CommentItem";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/icons/add_comment.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
 
-function CommentSection({ commentList, fetchData, id }) {
+function CommentSection({ commentList, getSingleVideoData, id }) {
     const [comment, setComment] = useState("");
 
     const handleCommentChange = (e) => {
@@ -16,10 +16,7 @@ function CommentSection({ commentList, fetchData, id }) {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         postComment(comment);
-        console.log(comment);
         setComment("");
-        fetchData(id);
-        e.target.reset();
     };
 
     async function postComment(newComment) {
@@ -31,16 +28,13 @@ function CommentSection({ commentList, fetchData, id }) {
 
             await axios.post(`${baseUrl}/videos/${id}/comments?api_key=${apiKey}`, commentObj);
 
-            // setComment(...commentList, commentObj);
-            fetchData(id);
+            getSingleVideoData(id);
         } catch (error) {
             console.error("Post request error: ", error);
         }
     }
 
-    // console.log("Comment list: ", commentList);
-
-    // no need for useEffect with post because
+    // no need for useEffect with post requests, only applicable for get requests which is covered in VideoDetailsPage
 
     return (
         <section className="comments">
@@ -67,14 +61,16 @@ function CommentSection({ commentList, fetchData, id }) {
                 </form>
             </div>
             <ul className="comments__list">
-                {commentList.map((comment) => (
-                    <CommentItem
-                        key={comment.id}
-                        name={comment.name}
-                        timestamp={comment.timestamp}
-                        comment={comment.comment}
-                    />
-                ))}
+                {commentList
+                    .sort((a, b) => b.timestamp - a.timestamp)
+                    .map((comment) => (
+                        <CommentItem
+                            key={comment.id}
+                            name={comment.name}
+                            timestamp={comment.timestamp}
+                            comment={comment.comment}
+                        />
+                    ))}
             </ul>
         </section>
     );

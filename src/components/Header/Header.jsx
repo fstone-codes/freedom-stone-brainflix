@@ -23,10 +23,10 @@ function Header() {
                         <img className="avatar__image" src={avatar} alt="user avatar" />
                     </div>
                 </div>
-                <button className="btn" onClick={handleBtnClick}>
+                <Link to={"/upload"} className="btn">
                     <img className="btn__icon" src={uploadIcon} alt="upload icon" />
                     UPLOAD
-                </button>
+                </Link>
                 <div className="avatar avatar--after">
                     <img className="avatar__image" src={avatar} alt="user avatar" />
                 </div>
