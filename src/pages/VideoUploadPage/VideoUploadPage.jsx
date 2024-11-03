@@ -1,7 +1,4 @@
 import "./VideoUploadPage.scss";
-import { Link, useNavigate } from "react-router-dom";
-
-import { useState } from "react";
 import UploadForm from "../../components/UploadForm/UploadForm";
 
 function VideoUploadPage() {

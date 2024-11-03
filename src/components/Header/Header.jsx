@@ -1,9 +1,9 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import Avatar from "../Avatar/Avatar";
+import Button from "../Button/Button";
 import logo from "../../assets/logos/Brainflix-logo.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
-import Button from "../Button/Button";
-import Avatar from "../Avatar/Avatar";
 
 function Header() {
     return (

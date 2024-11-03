@@ -40,7 +40,6 @@
         @include desktop {
             margin: 0;
             width: 100%;
-            height: auto;
         }
     }
 
@@ -106,8 +105,8 @@
         margin: $spacing-lg 0;
 
         @include tablet {
-            margin: 0;
             order: -1;
+            margin: 0;
         }
     }
 

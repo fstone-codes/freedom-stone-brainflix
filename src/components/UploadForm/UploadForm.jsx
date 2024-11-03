@@ -1,21 +1,25 @@
 import "./UploadForm.scss";
-import Button from "../Button/Button";
-import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
-import publishIcon from "../../assets/icons/publish.svg";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Button from "../Button/Button";
+import publishIcon from "../../assets/icons/publish.svg";
+import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 
 function UploadForm() {
+    // store the form input values
+    // update as a change (typing) occurs
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
 
+    // notify and redirect to home upon successful submission
     const handleFormSubmit = (e) => {
         e.preventDefault();
         alert("Upload successful!");
         navigate("/");
     };
 
+    // update state memory to reflect changes
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };

@@ -1,20 +1,28 @@
 import "./CommentSection.scss";
-import CommentItem from "../CommentItem/CommentItem";
-import commentIcon from "../../assets/icons/add_comment.svg";
 import { useState } from "react";
 import { baseUrl, apiKey } from "../../utils";
 import axios from "axios";
-import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
+import Button from "../Button/Button";
+import CommentItem from "../CommentItem/CommentItem";
+import commentIcon from "../../assets/icons/add_comment.svg";
 
-function CommentSection({ commentList, getSingleVideoData, id }) {
+function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
+    // store the form comment input values
+    // update as a change (typing) occurs
     const [comment, setComment] = useState("");
+    // store the status of invalid inputs
+    // there are no invalid inputs initially
     const [invalidStatus, setInvalidStatus] = useState(false);
 
+    // update state memory to reflect changes
     const handleCommentChange = (e) => {
         setComment(e.target.value);
     };
 
+    // remove spaces before entry + validate input upon submission
+    // if the form comment input value is empty, notify user + do not submit
+    // otherwise, reset comment + invalidStatus state and post comment
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
@@ -28,6 +36,7 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
         }
     };
 
+    // post form comment input value + fetch updated comments for current video
     async function postComment(newComment) {
         try {
             let commentObj = {
@@ -43,7 +52,7 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
         }
     }
 
-    // no need for useEffect with post requests, only applicable for get requests which is covered in VideoDetailsPage
+    // **no need for useEffect with post requests, only applicable for get requests which is covered in VideoDetailsPage**
 
     return (
         <section className="comments">
@@ -80,6 +89,7 @@ function CommentSection({ commentList, getSingleVideoData, id }) {
                             name={comment.name}
                             timestamp={comment.timestamp}
                             comment={comment.comment}
+                            convertTime={convertTime}
                         />
                     ))}
             </ul>

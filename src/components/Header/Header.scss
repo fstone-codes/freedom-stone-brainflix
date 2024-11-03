@@ -15,6 +15,10 @@
         margin: $spacing-sm $spacing-xxlg;
     }
 
+    &__link {
+        @include flexbox(column, center, center);
+    }
+
     &__logo {
         width: 7.5rem;
 
