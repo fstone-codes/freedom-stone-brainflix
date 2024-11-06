@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { baseUrl, apiKey } from "./utils.js";
+import { baseUrl } from "./utils.js";
 import axios from "axios";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
@@ -13,7 +13,7 @@ function App() {
 
     const getVideoQueueData = async () => {
         try {
-            const { data } = await axios.get(`${baseUrl}/videos?api_key=${apiKey}`);
+            const { data } = await axios.get(`${baseUrl}/videos`);
             setVideoQueue(data);
         } catch (error) {
             console.error("You have an error:", error);

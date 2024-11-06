@@ -1,7 +1,7 @@
 import "./VideoDetailsPage.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { baseUrl, apiKey } from "../../utils";
+import { baseUrl } from "../../utils";
 import axios from "axios";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import InfoSection from "../../components/InfoSection/InfoSection";
@@ -29,7 +29,7 @@ function VideoDetailsPage({ videoQueue }) {
     // fetch data for current video + comments
     const getSingleVideoData = async (id) => {
         try {
-            const { data } = await axios.get(`${baseUrl}/videos/${id}?api_key=${apiKey}`);
+            const { data } = await axios.get(`${baseUrl}/videos/${id}`);
             setCurrentVideo(data);
             setComments(data.comments);
         } catch (error) {

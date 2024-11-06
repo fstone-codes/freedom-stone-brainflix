@@ -1,6 +1,6 @@
 import "./CommentSection.scss";
 import { useState } from "react";
-import { baseUrl, apiKey } from "../../utils";
+import { baseUrl } from "../../utils";
 import axios from "axios";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
@@ -44,7 +44,7 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
                 comment: newComment,
             };
 
-            await axios.post(`${baseUrl}/videos/${id}/comments?api_key=${apiKey}`, commentObj);
+            await axios.post(`${baseUrl}/videos/${id}/comments`, commentObj);
 
             getSingleVideoData(id);
         } catch (error) {
