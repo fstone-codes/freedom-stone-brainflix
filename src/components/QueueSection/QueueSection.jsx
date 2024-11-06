@@ -1,5 +1,6 @@
 import "./QueueSection.scss";
 import QueueItem from "../QueueItem/QueueItem";
+import { baseUrl } from "../../utils";
 
 function QueueSection({ videoQueue }) {
     return (
@@ -10,7 +11,7 @@ function QueueSection({ videoQueue }) {
                     <QueueItem
                         key={video.id}
                         id={video.id}
-                        image={video.image}
+                        image={`${baseUrl}/${video.image}`}
                         title={video.title}
                         channel={video.channel}
                     />
