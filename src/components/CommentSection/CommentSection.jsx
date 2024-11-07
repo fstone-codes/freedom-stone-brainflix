@@ -39,7 +39,7 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
     // post form comment input value + fetch updated comments for current video
     async function postComment(newComment) {
         try {
-            let commentObj = {
+            const commentObj = {
                 name: "Arrayuv Sunshine",
                 comment: newComment,
             };

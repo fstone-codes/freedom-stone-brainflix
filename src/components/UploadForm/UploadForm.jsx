@@ -1,11 +1,13 @@
 import "./UploadForm.scss";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { baseUrl } from "../../utils";
+import axios from "axios";
 import Button from "../Button/Button";
 import publishIcon from "../../assets/icons/publish.svg";
 import uploadPreview from "../../assets/images/Upload-video-preview.jpg";
 
-function UploadForm() {
+function UploadForm({ getVideoQueueData }) {
     // store the form input values
     // update as a change (typing) occurs
     const [title, setTitle] = useState("");
@@ -16,6 +18,7 @@ function UploadForm() {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         alert("Upload successful!");
+        postVideo();
         navigate("/");
     };
 
@@ -27,6 +30,22 @@ function UploadForm() {
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
     };
+
+    // post video upload form input values + fetch updated video queue data for queue list
+    async function postVideo() {
+        try {
+            const videoObj = {
+                title: title,
+                description: description,
+            };
+
+            await axios.post(`${baseUrl}/videos`, videoObj);
+
+            getVideoQueueData();
+        } catch (error) {
+            console.error("Post request error: ", error);
+        }
+    }
 
     return (
         <form className="upload-form__form" onSubmit={handleFormSubmit}>

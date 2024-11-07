@@ -37,7 +37,10 @@ function App() {
                     path="video/:videoId"
                     element={<VideoDetailsPage videoQueue={videoQueue} />}
                 />
-                <Route path="upload" element={<VideoUploadPage />} />
+                <Route
+                    path="upload"
+                    element={<VideoUploadPage getVideoQueueData={getVideoQueueData} />}
+                />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </BrowserRouter>
