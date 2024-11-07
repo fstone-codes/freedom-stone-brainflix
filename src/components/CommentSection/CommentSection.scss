@@ -123,4 +123,49 @@
 
     // &__comment {
     // }
+
+    &__icon-container {
+        @include flexbox(row, space-between, center);
+        height: 1.5rem;
+        aspect-ratio: 1.5 / 1;
+    }
+
+    &__like-container {
+        @include flexbox(row, center, flex-start);
+        gap: $spacing-xsm;
+        color: $primary-color-silver;
+    }
+
+    &__like {
+        height: 1rem;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            filter: invert(60%) sepia(93%) saturate(4493%) hue-rotate(181deg) brightness(97%)
+                contrast(111%);
+        }
+
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+
+    &__delete {
+        height: $spacing-sm;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        filter: invert(75%) sepia(48%) saturate(0%) hue-rotate(172deg) brightness(87%) contrast(88%);
+        transition: transform 0.2s ease;
+
+        &:hover {
+            filter: invert(60%) sepia(93%) saturate(4493%) hue-rotate(181deg) brightness(97%)
+                contrast(111%);
+        }
+
+        &:active {
+            transform: scale(0.8);
+        }
+    }
 }

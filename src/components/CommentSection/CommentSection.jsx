@@ -19,6 +19,7 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
     const handleCommentChange = (e) => {
         setComment(e.target.value);
     };
+    console.log(commentList);
 
     // remove spaces before entry + validate input upon submission
     // if the form comment input value is empty, notify user + do not submit
@@ -89,6 +90,7 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
                             name={comment.name}
                             timestamp={comment.timestamp}
                             comment={comment.comment}
+                            likes={comment.likes}
                             convertTime={convertTime}
                         />
                     ))}
