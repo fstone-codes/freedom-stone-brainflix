@@ -23,7 +23,7 @@ function CommentItem({
 
             getSingleVideoData(videoId);
         } catch (error) {
-            console.error("Error updating like count", error);
+            console.error("Error updating like count: ", error);
         }
     }
 
@@ -31,9 +31,24 @@ function CommentItem({
         setLikeCount(likes);
     }, [likes]);
 
+    async function removeComment() {
+        try {
+            await axios.delete(`${baseUrl}/videos/${videoId}/comments/${commentId}`);
+
+            getSingleVideoData(videoId);
+        } catch (error) {
+            console.error("Error removing comment: ", error);
+        }
+    }
+
     function handleLikeClick() {
         addCommentLike();
     }
+
+    function handleDeleteClick() {
+        removeComment();
+    }
+
     return (
         <li className="comments__item">
             <div className="avatar"></div>
@@ -53,7 +68,12 @@ function CommentItem({
                         />
                         {likeCount}
                     </div>
-                    <img className="comments__delete" src={deleteIcon} alt="delete icon" />
+                    <img
+                        onClick={handleDeleteClick}
+                        className="comments__delete"
+                        src={deleteIcon}
+                        alt="delete icon"
+                    />
                 </div>
             </div>
         </li>

@@ -33,7 +33,7 @@ function VideoDetailsPage({ videoQueue }) {
             setCurrentVideo(data);
             setComments(data.comments);
         } catch (error) {
-            console.error("You have an error:", error);
+            console.error("Error fetching data:", error);
         }
     };
 

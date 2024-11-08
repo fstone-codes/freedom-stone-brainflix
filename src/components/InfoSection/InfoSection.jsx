@@ -24,7 +24,7 @@ function InfoSection({
 
             getSingleVideoData(id);
         } catch (error) {
-            console.error("Error updating like count", error);
+            console.error("Error updating like count: ", error);
         }
     }
 
