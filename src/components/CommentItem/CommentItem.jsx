@@ -15,8 +15,11 @@ function CommentItem({
     commentId,
     likes,
 }) {
+    // store the like count values
+    // update as like button clicked on
     const [likeCount, setLikeCount] = useState(likes);
 
+    // put incremented like value + fetch updated comments for current like count
     async function addCommentLike() {
         try {
             await axios.put(`${baseUrl}/videos/${videoId}/comments/${commentId}`);
@@ -27,10 +30,12 @@ function CommentItem({
         }
     }
 
+    // when likes variable is updated/changed, update the stored likes value accordingly
     useEffect(() => {
         setLikeCount(likes);
     }, [likes]);
 
+    // delete data for current video comment
     async function removeComment() {
         try {
             await axios.delete(`${baseUrl}/videos/${videoId}/comments/${commentId}`);
@@ -41,6 +46,7 @@ function CommentItem({
         }
     }
 
+    // update state memory to reflect changes
     function handleLikeClick() {
         addCommentLike();
     }

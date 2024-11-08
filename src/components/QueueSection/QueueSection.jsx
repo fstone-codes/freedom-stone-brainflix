@@ -1,6 +1,6 @@
 import "./QueueSection.scss";
-import QueueItem from "../QueueItem/QueueItem";
 import { baseUrl } from "../../utils";
+import QueueItem from "../QueueItem/QueueItem";
 
 function QueueSection({ videoQueue }) {
     return (

@@ -21,8 +21,8 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
     };
 
     // remove spaces before entry + validate input upon submission
-    // if the form comment input value is empty, notify user + do not submit
-    // otherwise, reset comment + invalidStatus state and post comment
+    // if the form comment input value is not empty, reset comment + invalidStatus state and post comment
+    // otherwise, implement invalidStatus, notify user + do not submit
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
@@ -51,8 +51,6 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
             console.error("Post request error: ", error);
         }
     }
-
-    // /:videoId/comments/:commentId
 
     // **no need for useEffect with post requests, only applicable for get requests which is covered in VideoDetailsPage**
 

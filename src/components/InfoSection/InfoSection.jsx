@@ -1,9 +1,9 @@
 import "./InfoSection.scss";
-import likeIcon from "../../assets/icons/likes.svg";
-import viewIcon from "../../assets/icons/views.svg";
 import { useEffect, useState } from "react";
 import { baseUrl } from "../../utils";
 import axios from "axios";
+import likeIcon from "../../assets/icons/likes.svg";
+import viewIcon from "../../assets/icons/views.svg";
 
 function InfoSection({
     getSingleVideoData,
@@ -16,8 +16,11 @@ function InfoSection({
     description,
     id,
 }) {
+    // store the like count values
+    // update as like button clicked on
     const [likeCount, setLikeCount] = useState(likes);
 
+    // put incremented like value + fetch updated comments for current like count
     async function addVideoLike() {
         try {
             await axios.put(`${baseUrl}/videos/${id}/likes`);
@@ -28,14 +31,17 @@ function InfoSection({
         }
     }
 
+    // when likes variable is updated/changed, update the stored likes value accordingly
     useEffect(() => {
         setLikeCount(likes);
     }, [likes]);
 
+    // update state memory to reflect changes
     function handleLikeClick() {
         addVideoLike();
     }
 
+    // format number to utilise commas
     const formatNumber = (number) => number.toLocaleString("en-US");
 
     return (

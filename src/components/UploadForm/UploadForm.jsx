@@ -27,6 +27,7 @@ function UploadForm({ getVideoQueueData }) {
         setDescription(e.target.value);
     };
 
+    // remove spaces before entry + validate input upon submission
     const isTitleValid = () => {
         return title.trim() ? true : false;
     };
@@ -39,7 +40,8 @@ function UploadForm({ getVideoQueueData }) {
         return isTitleValid() && isDescriptionValid() ? true : false;
     };
 
-    // notify and redirect to home upon successful submission
+    // if both form input values are not empty, notify user, post comment + redirect to home upon successful submission
+    // otherwise, implement invalidStatus, notify user + do not submit
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if (isFormValid()) {
