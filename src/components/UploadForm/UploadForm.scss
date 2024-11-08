@@ -77,6 +77,10 @@
             border: 2px solid $primary-color-blue;
         }
 
+        &--invalid {
+            border: 1px solid #d22d2d;
+        }
+
         &--textarea {
             height: 6rem;
             resize: none;

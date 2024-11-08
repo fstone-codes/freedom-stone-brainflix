@@ -12,15 +12,11 @@ function UploadForm({ getVideoQueueData }) {
     // update as a change (typing) occurs
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const navigate = useNavigate();
+    // store the status of invalid inputs
+    // there are no invalid inputs initially
+    const [invalidStatus, setInvalidStatus] = useState(false);
 
-    // notify and redirect to home upon successful submission
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        alert("Upload successful!");
-        postVideo();
-        navigate("/");
-    };
+    const navigate = useNavigate();
 
     // update state memory to reflect changes
     const handleTitleChange = (e) => {
@@ -29,6 +25,31 @@ function UploadForm({ getVideoQueueData }) {
 
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
+    };
+
+    const isTitleValid = () => {
+        return title.trim() ? true : false;
+    };
+
+    const isDescriptionValid = () => {
+        return description.trim() ? true : false;
+    };
+
+    const isFormValid = () => {
+        return isTitleValid() && isDescriptionValid() ? true : false;
+    };
+
+    // notify and redirect to home upon successful submission
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        if (isFormValid()) {
+            alert("Upload successful!");
+            postVideo();
+            navigate("/");
+        } else {
+            setInvalidStatus(true);
+            alert("Please input a valid title and description");
+        }
     };
 
     // post video upload form input values + fetch updated video queue data for queue list
@@ -65,7 +86,9 @@ function UploadForm({ getVideoQueueData }) {
                         </label>
                         <input
                             onChange={handleTitleChange}
-                            className="upload-form__input"
+                            className={`upload-form__input ${
+                                invalidStatus ? "upload-form__input--invalid" : ""
+                            }`}
                             type="text"
                             name="title"
                             id="title"
@@ -79,7 +102,9 @@ function UploadForm({ getVideoQueueData }) {
                         </label>
                         <textarea
                             onChange={handleDescriptionChange}
-                            className="upload-form__input upload-form__input--textarea"
+                            className={`upload-form__input upload-form__input--textarea ${
+                                invalidStatus ? "upload-form__input--invalid" : ""
+                            }`}
                             name="description"
                             id="description"
                             value={description}

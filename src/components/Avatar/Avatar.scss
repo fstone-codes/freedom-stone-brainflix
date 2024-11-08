@@ -9,7 +9,7 @@
     overflow: hidden;
 
     @include tablet {
-        width: 2.5rem;
+        flex: 0 0 2.5rem;
     }
 
     &__image {
