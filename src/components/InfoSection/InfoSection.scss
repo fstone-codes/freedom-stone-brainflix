@@ -59,6 +59,22 @@
     // &__icon {
     // }
 
+    &__like {
+        // height: 1rem;
+        // aspect-ratio: 1 / 1;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            filter: invert(60%) sepia(93%) saturate(4493%) hue-rotate(181deg) brightness(97%)
+                contrast(111%);
+        }
+
+        &:active {
+            transform: scale(0.8);
+        }
+    }
+
     &__description {
         @include tablet {
             width: 95%;

@@ -98,6 +98,7 @@ function VideoDetailsPage({ videoQueue }) {
             <div className="main__container">
                 <div className="main__content-container">
                     <InfoSection
+                        getSingleVideoData={getSingleVideoData}
                         convertTime={convertTime}
                         title={currentVideo.title}
                         channel={currentVideo.channel}
@@ -105,6 +106,7 @@ function VideoDetailsPage({ videoQueue }) {
                         views={currentVideo.views}
                         likes={currentVideo.likes}
                         description={currentVideo.description}
+                        id={currentVideo.id}
                     />
                     <CommentSection
                         commentList={comments}

@@ -86,11 +86,14 @@ function CommentSection({ commentList, convertTime, getSingleVideoData, id }) {
                     .sort((a, b) => b.timestamp - a.timestamp)
                     .map((comment) => (
                         <CommentItem
+                            getSingleVideoData={getSingleVideoData}
                             key={comment.id}
                             name={comment.name}
                             timestamp={comment.timestamp}
                             comment={comment.comment}
                             likes={comment.likes}
+                            videoId={id}
+                            commentId={comment.id}
                             convertTime={convertTime}
                         />
                     ))}
