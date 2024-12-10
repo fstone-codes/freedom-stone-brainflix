@@ -2,7 +2,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import Avatar from "../Avatar/Avatar";
 import Button from "../Button/Button";
-import logo from "../../assets/logos/Brainflix-logo.svg";
+import logo from "../../assets/logos/BrainFlix-logo.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
 
 function Header() {
