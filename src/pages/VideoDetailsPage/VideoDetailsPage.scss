@@ -18,12 +18,15 @@
     &__content-container {
         @include desktop {
             border-right: 1px solid $secondary-color-mercury;
+            flex: 1;
+            overflow: hidden;
         }
     }
 
     &__queue-container {
         @include desktop {
             padding-left: $spacing-med;
+            flex-shrink: 0;
         }
     }
 }
